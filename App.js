@@ -37,15 +37,15 @@ function DetailsScreen({route, navigation}) {
   return (
   <View style={[styles.container]}>
   <Text style={styles.title}>Bruschetta</Text>
-  <View style={styles.detailtext}>
-  <Text>Ingredients</Text>
-  <Text>{text * 4} plum tomatoes</Text>
-  <Text>{text * 6} basil leaves</Text>
-  <Text>{text * 3} garlic cloves, chopped</Text>
-  <Text>{text * 3} TB olive oil</Text>
+  <View>
+  <Text style={styles.detailtext}>Ingredients</Text>
+  <Text style={styles.detailtext}>  {text * 4} plum tomatoes</Text>
+  <Text style={styles.detailtext}>  {text * 6} basil leaves</Text>
+  <Text style={styles.detailtext}>  {text * 3} garlic cloves, chopped</Text>
+  <Text style={styles.detailtext}>  {text * 3} TB olive oil</Text>
   <Text></Text>
-  <Text>Directions</Text>
-  <Text>Combine the ingredients, add salt to taste.  Top French bread slices with mixture.</Text>
+  <Text style={styles.detailtext}>Directions</Text>
+  <Text style={styles.detailtext}>  Combine the ingredients, add salt to taste.  Top French bread slices with mixture.</Text>
   </View>
   </View>
   );
@@ -57,8 +57,8 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name="Healthy Receipes" component={HomeScreen} options={{headerStyle: {backgroundColor: '#f4511e'}, headerTintColor: '#fff'}} />
-        <Stack.Screen name="Details" component={DetailsScreen} options={{headerStyle: {backgroundColor: '#f4511e'}, headerTintColor: '#fff'}} />
+        <Stack.Screen name="Healthy Recipes"  component={HomeScreen} options={{headerStyle: {backgroundColor: '#f4511e'}, headerTintColor: '#fff'}} />
+        <Stack.Screen name="Details" component={DetailsScreen} options={{headerStyle: {backgroundColor: '#f4511e'},headerTintColor: '#fff',headerBackTitle: 'Healthy Recipes'}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -82,14 +82,13 @@ const styles = StyleSheet.create({
   button: {
     alignItems: 'center',
     paddingVertical: 12,
-    borderRadius: 75,
+    borderRadius: 10,
     elevation: 3,
-    backgroundColor: 'black',
+    backgroundColor: 'grey',
     width: 150,
   },
   detailtext: {
     fontSize: 25,
-    lineHeight: 21,
     fontWeight: 'bold',
     letterSpacing: 0.25,
   },
